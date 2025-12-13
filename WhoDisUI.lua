@@ -31,14 +31,14 @@ function UI:New()
     return instance
 end
 
+-- Private methods
+
 local function _loadPersistedFormData(self)
     local db = API.GetDB()
     if db.formData ~= nil and db.formData ~= {} then
         self._formState = db.formData
     end
 end
-
--- Private methods
 
 local function _savePersistedFormData(self)
     local db = API.GetDB()
@@ -136,7 +136,7 @@ local function _showMainDialog(self)
     useMyLevelBtn:SetCallback("OnClick", function()
         local lvl = UnitLevel("player")
         self._formState.maxLevel = tostring(lvl)
-        self._formState.minLevel = tostring(math.max(1, lvl - 2))
+        self._formState.minLevel = tostring(lvl)
         minEdit:SetText(self._formState.minLevel)
         maxEdit:SetText(self._formState.maxLevel)
         _updateStatusBarText(self)

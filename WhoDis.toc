@@ -3,7 +3,7 @@
 ## Notes: /who command builder
 ## Author: Abracadaniel22
 ## Version: 1.0
-## SavedVariables: WhoDisDB
+## SavedVariablesPerCharacter: WhoDisDB
 ## X-Website: https://github.com/abracadaniel22/whodis
 
 Libs\LibStub\LibStub.lua
