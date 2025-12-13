@@ -7,6 +7,9 @@
 ## Features
 
 - Visual aid to build a /who command.
+- Remembers the last command
+- Auto completes the zone
+- One button to find players around my level
 - Supports custom races. Will attempt to automatically add the player's race if it's custom. Otherwise, a custom race can be added with `/whodis addrace <faction> <name>`.
 
 ## How to use
@@ -16,3 +19,6 @@
 
 ## Screenshots
 
+<img width="628" height="629" alt="01" src="https://github.com/user-attachments/assets/de5ab843-208e-4fb3-9158-dfd2d5de280d" />
+
+<img width="226" height="226" alt="02" src="https://github.com/user-attachments/assets/a0bfcea1-21d6-42cc-8691-df8ca2e60976" />
