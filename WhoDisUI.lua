@@ -33,10 +33,33 @@ end
 
 -- Private methods
 
+local function _isCorruptedState(self)
+    local fs = self._formState
+    return fs.minLevel == nil or fs.maxLevel == nil or fs.classes == nil or fs.races == nil or fs.zone == nil or fs.name == nil or fs.guild == nil
+end
+
 local function _loadPersistedFormData(self)
     local db = API.GetDB()
     if db.formData ~= nil and db.formData ~= {} then
         self._formState = db.formData
+        -- TODO steps to reproduce:
+        --   create new character
+        --   login but don't open addon
+        --   log out
+        --   this saves variable in a bad state apparently?
+        -- the real issue is saving bad variables
+        -- but this check needs to stay regardless
+        if _isCorruptedState(self) then
+            self._formState = {
+                minLevel = "",
+                maxLevel = "",
+                classes = {},
+                races = {},
+                zone = "",
+                name = "",
+                guild = "",
+            }
+        else
     end
 end
 
